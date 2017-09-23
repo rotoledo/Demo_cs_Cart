@@ -39,29 +39,5 @@ namespace Demo_cs_Cart.TestDataAccess
             }
         }
 
-
-        public static void SetTestData(string column, String data)
-        {
-            using (var connection = new OleDbConnection(TestDataFileConnection()))
-            {
-                InitiateData();
-                connection.Open();
-                var query = string.Format("update [" + testSuite + "$] set " + column + "='" + data + "' where CT='{0}'", testCase);
-                connection.Execute(query);
-                connection.Close();
-            }
-        }
-
-        public static void SetTestDataAll(string column, String data)
-        {
-            using (var connection = new OleDbConnection(TestDataFileConnection()))
-            {
-                InitiateData();
-                connection.Open();
-                var query = "update [" + testSuite + "$] set " + column + "='" + data + "'";
-                connection.Execute(query);
-                connection.Close();
-            }
-        }
     }
 }

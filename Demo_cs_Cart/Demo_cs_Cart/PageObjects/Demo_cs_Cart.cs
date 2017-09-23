@@ -6,7 +6,7 @@ using System;
 
 namespace Demo_cs_Cart.PageObjects
 {
-    class Login
+    class Demo_cs_Cart
     {
         [FindsBy(How = How.CssSelector, Using = "input#search_input")]
         [CacheLookup]
@@ -31,24 +31,5 @@ namespace Demo_cs_Cart.PageObjects
         [FindsBy(How = How.CssSelector, Using = "ul.ty-cart-items__list")]
         [CacheLookup]
         public IWebElement List_Carrinho { get; set; }
-        
-
-
-
-
-
-        // div#pagination_contents div:nth-child(2) div
-
-        [FindsBy(How = How.CssSelector, Using = "input#TextBoxUser")]
-        [CacheLookup]
-        public IWebElement Input_UserName { get; set; }
-
-        [FindsBy(How = How.CssSelector, Using = "input#TextBoxPwd")]
-        [CacheLookup]
-        public IWebElement Input_Password { get; set; }
-
-        [FindsBy(How = How.CssSelector, Using = "input#btnAccess")]
-        [CacheLookup]
-        public IWebElement Button_Acessar { get; set; }
     }
 }

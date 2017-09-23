@@ -18,9 +18,9 @@ namespace Demo_cs_Cart.PageObjects
             return page;
         }
 
-        public static Login Login
+        public static Demo_cs_Cart Login
         {
-            get { return GetPage<Login>(); }
+            get { return GetPage<Demo_cs_Cart>(); }
         }
 
     }

@@ -64,6 +64,7 @@ namespace Demo_cs_Cart
             }
             catch (AssertionException e)
             { throw new TestFailedException(e.Message); }
+            generalMethods.printAndLog("Validação OK - Produtos no Carrinho");
 
             // OK > Teste executado com Sucesso
             generalMethods.printAndLog("OK - Teste executado com Sucesso");

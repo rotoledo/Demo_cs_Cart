@@ -83,7 +83,7 @@
     <Compile Include="Demo_cs_Cart\Common\GeneralMethods.cs" />
     <Compile Include="Demo_cs_Cart\Demo_cs_CartException\Demo_cs_CartException.cs" />
     <Compile Include="Demo_cs_Cart\Demo_cs_CartException\TestFailedException.cs" />
-    <Compile Include="Demo_cs_Cart\PageObjects\Common\Login .cs" />
+    <Compile Include="Demo_cs_Cart\PageObjects\Demo_cs_Cart.cs" />
     <Compile Include="Demo_cs_Cart\PageObjects\Page.cs" />
     <Compile Include="Demo_cs_Cart\TestDataAccess\EntityData.cs" />
     <Compile Include="Demo_cs_Cart\TestDataAccess\ExcelDataAccess.cs" />

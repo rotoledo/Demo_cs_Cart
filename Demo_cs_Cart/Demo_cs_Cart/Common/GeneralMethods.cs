@@ -21,8 +21,7 @@ namespace Demo_cs_Cart.Support
     class GeneralMethods
     {
         static Actions action;
-        static WebDriverWait wait_30s;
-        static WebDriverWait wait_5s;
+        static WebDriverWait wait_10s;
         static int times = 0;
         static String testSuite;
         static String testCase;
@@ -57,7 +56,7 @@ namespace Demo_cs_Cart.Support
         /// <param name="product"></param>
         public void SearchForProduct(String product)
         {
-            wait_30s = new WebDriverWait(WebDriverFactory.Driver, TimeSpan.FromSeconds(30));
+            wait_10s = new WebDriverWait(WebDriverFactory.Driver, TimeSpan.FromSeconds(10));
 
             // Busca
             Page.Login.Input_SearchBox.SendKeys(product);
@@ -73,7 +72,7 @@ namespace Demo_cs_Cart.Support
             this.printAndLog("Adiciona ao Carrinho");
 
             // Confirmação Produto Adc ao Carrinho
-            wait_30s.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[class^='cm-notification-content'")));
+            wait_10s.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[class^='cm-notification-content'")));
             this.printAndLog("Confirmação - Produto " + product + " Adc ao Carrinho");
         }
 

@@ -37,19 +37,5 @@ namespace Demo_cs_Cart.WrapperFactory
                     break;
             }
         }
-
-        public static void LoadApplication(string url)
-        {
-            Driver.Url = url;
-        }
-
-        public static void CloseAllDrivers()
-        {
-            foreach (var key in Drivers.Keys)
-            {
-                Drivers[key].Close();
-                Drivers[key].Quit();
-            }
-        }
     }
 }
