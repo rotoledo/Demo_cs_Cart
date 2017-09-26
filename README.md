@@ -12,4 +12,4 @@ Output: C:\Output\
 > Output of test evidences, screenshots and logs by date and browser.
 
 Framework and Design Patterns:
-> Selenium Framework, NUnit, Custom Exception, Class Methods, Configuration file, WebDriverFactory, PageFactory, Data Driven.
+> Selenium Framework, NUnit Framework, Custom Exception, IJavaScriptExecutor, Class Methods, Configuration file, WebDriverFactory, PageFactory, Data Driven.
