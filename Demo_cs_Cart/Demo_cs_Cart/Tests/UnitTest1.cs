@@ -34,7 +34,7 @@ namespace Demo_cs_Cart
             entityData = ExcelDataAccess.GetTestData();
 
             // OBJETOS DO TESTE
-            WebDriverFactory.InitBrowser("Chrome");
+            WebDriverFactory.InitBrowser(entityData.Browser);
             generalMethods = new GeneralMethods();
             action = new Actions(WebDriverFactory.Driver);
             wait_30s = new WebDriverWait(WebDriverFactory.Driver, TimeSpan.FromSeconds(30));
@@ -55,12 +55,14 @@ namespace Demo_cs_Cart
             generalMethods.SearchForProduct(entityData.Search02);
 
             // Valida Produtos no Carrinho
-            Thread.Sleep(5000);
-            Page.Login.Icon_Carrinho.Click();
+            IWebElement element = WebDriverFactory.Driver.FindElement(By.CssSelector("div#sw_dropdown_8"));
+            IJavaScriptExecutor executor = (IJavaScriptExecutor)WebDriverFactory.Driver;
+            executor.ExecuteScript("arguments[0].click()", element);
+
             try
             {
-                Assert.True(Page.Login.List_Carrinho.Text.Contains(entityData.Search01), "Carrinho não contém produto: " + entityData.Search01);
-                Assert.True(Page.Login.List_Carrinho.Text.Contains(entityData.Search02), "Carrinho não contém produto: " + entityData.Search02);
+                Assert.True(Page.Demo_cs_Cart.List_Carrinho.Text.Contains(entityData.Search01), "Carrinho não contém produto: " + entityData.Search01);
+                Assert.True(Page.Demo_cs_Cart.List_Carrinho.Text.Contains(entityData.Search02), "Carrinho não contém produto: " + entityData.Search02);
             }
             catch (AssertionException e)
             { throw new TestFailedException(e.Message); }

@@ -34,7 +34,8 @@ namespace Demo_cs_Cart.Support
             testSuite = TestContext.CurrentContext.Test.Properties.Get("Category").ToString();
             testCase = TestContext.CurrentContext.Test.Properties.Get("ClassName").ToString();
             String today = DateTime.Today.ToString("dd_MM_yyyy");
-            directoryLocation = ConfigurationManager.AppSettings["Output"].ToString() + "Output - " + today + "\\" + testSuite + "\\" + testCase + "\\";
+            EntityData entityData = ExcelDataAccess.GetTestData();
+            directoryLocation = ConfigurationManager.AppSettings["Output"].ToString() + "Output - " + today + "\\" + entityData.Browser + "\\" + testSuite + "\\" + testCase + "\\";
         }
 
         /// <summary>
@@ -45,7 +46,11 @@ namespace Demo_cs_Cart.Support
         {
             cronometro.Start();
             WebDriverFactory.Driver.Navigate().GoToUrl(entityData.Url);
-            WebDriverFactory.Driver.Manage().Window.Maximize();
+            if (!entityData.Browser.Equals("Firefox"))
+            {
+                WebDriverFactory.Driver.Manage().Window.Maximize();
+            }
+
             this.printAndLog("Acessa Homepage");
         }
 
@@ -59,21 +64,23 @@ namespace Demo_cs_Cart.Support
             wait_10s = new WebDriverWait(WebDriverFactory.Driver, TimeSpan.FromSeconds(10));
 
             // Busca
-            Page.Login.Input_SearchBox.SendKeys(product);
+            Page.Demo_cs_Cart.Input_SearchBox.SendKeys(product);
             this.printAndLog("Busca - " + product);
-            Page.Login.Input_SearchBox.SendKeys(Keys.Enter);
+            Page.Demo_cs_Cart.Input_SearchBox.SendKeys(Keys.Enter);
 
             // Seleciona Produto
             this.printAndLog("Seleciona Produto");
-            Page.Login.Grid_Item01.Click();
+            Page.Demo_cs_Cart.Grid_Item01.Click();
 
             // Adiciona ao Carrinho
-            Page.Login.Button_AdicionarAoCarrinho.Click();
+            Page.Demo_cs_Cart.Button_AdicionarAoCarrinho.Click();
             this.printAndLog("Adiciona ao Carrinho");
 
             // Confirmação Produto Adc ao Carrinho
-            wait_10s.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[class^='cm-notification-content'")));
+            wait_10s.Until(ExpectedConditions.ElementToBeClickable(Page.Demo_cs_Cart.Msg_Confirmacao));
             this.printAndLog("Confirmação - Produto " + product + " Adc ao Carrinho");
+
+            Page.Demo_cs_Cart.Button_Fechar.Click();
         }
 
 

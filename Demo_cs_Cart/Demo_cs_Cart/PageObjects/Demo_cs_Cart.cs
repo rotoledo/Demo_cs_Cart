@@ -31,5 +31,14 @@ namespace Demo_cs_Cart.PageObjects
         [FindsBy(How = How.CssSelector, Using = "ul.ty-cart-items__list")]
         [CacheLookup]
         public IWebElement List_Carrinho { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div[class^='cm-notification-content'")]
+        [CacheLookup]
+        public IWebElement Msg_Confirmacao { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "body > div.cm-notification-content.cm-notification-content-extended.notification-content-extended.cm-auto-hide > h1 > span")]
+        [CacheLookup]
+        public IWebElement Button_Fechar { get; set; }
+
     }
 }

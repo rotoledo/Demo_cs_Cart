@@ -18,7 +18,7 @@ namespace Demo_cs_Cart.PageObjects
             return page;
         }
 
-        public static Demo_cs_Cart Login
+        public static Demo_cs_Cart Demo_cs_Cart
         {
             get { return GetPage<Demo_cs_Cart>(); }
         }
