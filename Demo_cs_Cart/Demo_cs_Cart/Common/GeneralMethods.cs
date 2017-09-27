@@ -1,17 +1,13 @@
 ﻿using log4net;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using Demo_cs_Cart.PageObjects;
 using Demo_cs_Cart.WrapperFactory;
 using Demo_cs_Cart.TestDataAccess;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Diagnostics;
@@ -20,9 +16,7 @@ namespace Demo_cs_Cart.Support
 {
     class GeneralMethods
     {
-        static Actions action;
         static WebDriverWait wait_10s;
-        static int times = 0;
         static String testSuite;
         static String testCase;
         static private readonly ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);

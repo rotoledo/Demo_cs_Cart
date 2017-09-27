@@ -1,8 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
-using Demo_cs_Cart.WrapperFactory;
-using System;
 
 namespace Demo_cs_Cart.PageObjects
 {

@@ -1,5 +1,8 @@
 ﻿namespace Demo_cs_Cart.TestDataAccess
 {
+    /// <summary>
+    /// Entidade de Dados 
+    /// </summary>
     class EntityData
     {
         public string Key { get; set; }

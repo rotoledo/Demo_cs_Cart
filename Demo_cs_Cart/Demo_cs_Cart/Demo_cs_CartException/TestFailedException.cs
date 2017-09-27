@@ -1,6 +1,4 @@
-﻿using Demo_cs_Cart.Demo_cs_CartException;
-using Demo_cs_Cart.Support;
-using OpenQA.Selenium;
+﻿using Demo_cs_Cart.Support;
 using System;
 
 namespace Demo_cs_Cart.Demo_cs_CartException
