@@ -55,9 +55,8 @@ namespace Demo_cs_Cart
             generalMethods.SearchForProduct(entityData.Search02);
 
             // Valida Produtos no Carrinho
-            IWebElement element = WebDriverFactory.Driver.FindElement(By.CssSelector("div#sw_dropdown_8"));
             IJavaScriptExecutor executor = (IJavaScriptExecutor)WebDriverFactory.Driver;
-            executor.ExecuteScript("arguments[0].click()", element);
+            executor.ExecuteScript("arguments[0].click()", Page.Demo_cs_Cart.Icon_Carrinho);
 
             try
             {
