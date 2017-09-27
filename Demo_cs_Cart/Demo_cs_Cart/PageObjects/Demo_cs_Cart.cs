@@ -3,6 +3,10 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace Demo_cs_Cart.PageObjects
 {
+
+    /// <summary>
+    /// PageObject Design Pattern - Page and its WebElements
+    /// </summary>
     class Demo_cs_Cart
     {
         [FindsBy(How = How.CssSelector, Using = "input#search_input")]

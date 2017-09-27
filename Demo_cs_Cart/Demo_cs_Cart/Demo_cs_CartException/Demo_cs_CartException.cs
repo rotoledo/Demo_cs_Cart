@@ -2,6 +2,10 @@
 
 namespace Demo_cs_Cart.Demo_cs_CartException
 {
+
+    /// <summary>
+    /// Custom Exception
+    /// </summary>
     [Serializable]
     class Demo_cs_CartException : Exception
     {

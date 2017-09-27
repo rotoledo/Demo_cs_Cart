@@ -3,6 +3,10 @@ using Demo_cs_Cart.WrapperFactory;
 
 namespace Demo_cs_Cart.PageObjects
 {
+
+    /// <summary>
+    /// PageObject Design Pattern - Easily instantiate and maintain the WebElement instance
+    /// </summary>
     class Page
     {
 
@@ -13,6 +17,9 @@ namespace Demo_cs_Cart.PageObjects
             return page;
         }
 
+        /// <summary>
+        /// PageObject Design Pattern. Get the page you want
+        /// </summary>
         public static Demo_cs_Cart Demo_cs_Cart
         {
             get { return GetPage<Demo_cs_Cart>(); }

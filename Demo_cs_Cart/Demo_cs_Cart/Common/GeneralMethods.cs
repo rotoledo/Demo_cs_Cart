@@ -14,6 +14,10 @@ using System.Diagnostics;
 
 namespace Demo_cs_Cart.Support
 {
+
+    /// <summary>
+    /// Common Methods
+    /// </summary>
     class GeneralMethods
     {
         static WebDriverWait wait_10s;

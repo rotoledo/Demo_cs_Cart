@@ -6,6 +6,10 @@ using System.Collections.Generic;
 
 namespace Demo_cs_Cart.WrapperFactory
 {
+
+    /// <summary>
+    /// Factory Design Pattern. Easily instantiate and maintain the WebDriver instance
+    /// </summary>
     class WebDriverFactory
     {
         private static readonly IDictionary<string, IWebDriver> Drivers = new Dictionary<string, IWebDriver>();
@@ -17,6 +21,10 @@ namespace Demo_cs_Cart.WrapperFactory
             private set { driver = value; }
         }
 
+        /// <summary>
+        /// Factory Design Pattern. Initiate the WebDriver
+        /// </summary>
+        /// <param name="browserName"></param>
         public static void InitBrowser(string browserName)
         {
             driver = null;
